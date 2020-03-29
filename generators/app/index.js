@@ -83,8 +83,8 @@ module.exports = class extends Generator {
 
         // this.fs.copy(appPath + '.gitignore', '.gitignore');
         // this.fs.copy(appPath + 'app/.gitignore', 'app/.gitignore');
-        this.fs.copy(appPath + 'codecov.yml','codecov.yml')
-        this.fs.copy(appPath + 'default-detekt-config.yml','default-detekt-config.yml')
+        // this.fs.copy(appPath + 'codecov.yml','codecov.yml')
+        // this.fs.copy(appPath + 'default-detekt-config.yml','default-detekt-config.yml')
         // this.fs.copy(appPath + 'detekt.gradle','detekt.gradle')
         this.fs.copy(appPath + 'build.gradle', 'build.gradle');
         // this.fs.copy(appPath + 'ktlint.gradle', 'ktlint.gradle');
@@ -92,14 +92,14 @@ module.exports = class extends Generator {
         this.fs.copy(appPath + 'gradlew', 'gradlew');
         this.fs.copy(appPath + 'gradlew.bat', 'gradlew.bat');
         this.fs.copy(appPath + 'settings.gradle', 'settings.gradle');
-        this.fs.copy(appPath + 'secrets.properties.example', 'secrets.properties.example');
+        // this.fs.copy(appPath + 'secrets.properties.example', 'secrets.properties.example');
         this.fs.copy(appPath + 'app/proguard-rules.pro', 'app/proguard-rules.pro');
-        this.fs.copy(appPath + 'app/version.properties', 'app/version.properties');
+        // this.fs.copy(appPath + 'app/version.properties', 'app/version.properties');
     
         this.fs.copy(appPath + 'gradle', 'gradle');
         this.fs.copy(appPath + 'app/src/main/res', 'app/src/main/res');
 
-        this.fs.copyTpl(appPath + 'README.md', 'README.md', this.props);
+        // this.fs.copyTpl(appPath + 'README.md', 'README.md', this.props);
         this.fs.copyTpl(appPath + 'app/build.gradle', 'app/build.gradle', this.props);
         this.fs.copyTpl(appPath + 'app/src/androidTest/java/com/adityawidayanto/blog', 'app/src/androidTest/java/' + packageDir, this.props);
         this.fs.copyTpl(appPath + 'app/src/main/AndroidManifest.xml', 'app/src/main/AndroidManifest.xml', this.props);
