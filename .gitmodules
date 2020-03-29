@@ -1,0 +1,3 @@
+[submodule "generators/app/templates/basemvvmkotlinandroid"]
+	path = generators/app/templates/basemvvmkotlinandroid
+	url = git@github.com:adityawid/BlogMvvm.git
