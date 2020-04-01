@@ -57,6 +57,8 @@ module.exports = class extends Generator {
         var appFolder = 'basemvvmkotlinandroid';
 
         mkdirp('app');
+        mkdirp('buildSrc');
+        mkdirp('buildSrc/src/main/java');
         mkdirp('app/src/main/assets');
         mkdirp('app/src/main/java/' + packageDir);
         mkdirp('app/src/androidTest/java/' + packageDir);
@@ -98,6 +100,7 @@ module.exports = class extends Generator {
     
         this.fs.copy(appPath + 'gradle', 'gradle');
         this.fs.copy(appPath + 'app/src/main/res', 'app/src/main/res');
+        this.fs.copy(appPath + 'buildSrc', 'buildSrc');
 
         // this.fs.copyTpl(appPath + 'README.md', 'README.md', this.props);
         this.fs.copyTpl(appPath + 'app/build.gradle', 'app/build.gradle', this.props);
@@ -106,5 +109,7 @@ module.exports = class extends Generator {
         this.fs.copyTpl(appPath + 'app/src/main/java/com/adityawidayanto/blog', 'app/src/main/java/' + packageDir, this.props);
         this.fs.copyTpl(appPath + 'app/src/main/res/layout', 'app/src/main/res/layout', this.props);
         this.fs.copyTpl(appPath + 'app/src/test/java/com/adityawidayanto/blog', 'app/src/test/java/' + packageDir, this.props);
+        this.fs.copyTpl(appPath + 'app/src/main/res/navigation', 'app/src/main/res/navigation', this.props);
+
     }
 };
