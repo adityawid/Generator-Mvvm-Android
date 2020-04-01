@@ -45,10 +45,13 @@ module.exports = class extends Generator {
 
         return this.prompt(prompts).then(props => {
             this.props.appPackage = props.package;
-            this.appName = props.name;
-            this.appPackage = props.package;
-            this.androidTargetSdkVersion = props.targetSdk;
-            this.androidMinSdkVersion = props.minSdk;
+            this.props.appName = props.name;
+            this.props.androidTargetSdkVersion = props.targetSdk;
+            this.props.androidMinSdkVersion = props.minSdk;
+
+            // this.appPackage = props.package;
+            // this.androidTargetSdkVersion = props.targetSdk;
+            // this.androidMinSdkVersion = props.minSdk;
         });
     }
 

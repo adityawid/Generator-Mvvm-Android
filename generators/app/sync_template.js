@@ -51,7 +51,7 @@ function checkOutAndCopy() {
     });
 
     replaceConfig.forEach(config => {
-        console.log('Replaceing ' + config.name);
+        console.log('Replacing ' + config.name);
         replace({
             regex: config.replace,
             replacement: createReplacement(config),

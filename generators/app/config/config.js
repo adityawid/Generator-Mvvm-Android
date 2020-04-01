@@ -4,7 +4,7 @@ const replaceConfig = [
   {
     name: 'App name',
     symbol: '<%= appName %>',
-    replace: '<string name="app_name">Android Starter</string>',
+    replace: '<string name="app_name">Blog</string>',
     replacement: `<string name="app_name">${PLACEHOLDER}</string>`
   },
   {
@@ -16,8 +16,8 @@ const replaceConfig = [
   {
     name: 'Min SDK version',
     symbol: '<%= androidMinSdkVersion %>',
-    replace: 'minSdk    : 23',
-    replacement: `minSdk    : ${PLACEHOLDER}`
+    replace: 'minSdkVersion 23',
+    replacement: `minSdkVersion ${PLACEHOLDER}`
   }
 ];
 
