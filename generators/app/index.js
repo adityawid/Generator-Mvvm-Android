@@ -22,12 +22,12 @@ module.exports = class extends Generator {
                 name: 'Name',
                 message: 'What are you calling your app?',
                 store: true,
-                default: this.appname
+                default: "Blog"
             },
             {
                 name: 'package',
                 message: 'What package will you be publishing the app under?',
-                default: 'com.adityawidayanto.' + this.appName
+                default: 'com.adityawidayanto.' + this.Name
             },
             {
                 name: 'targetSdk',
@@ -44,8 +44,10 @@ module.exports = class extends Generator {
         ];
 
         return this.prompt(prompts).then(props => {
+            // this.appName = props.name;
+
+            this.props.appName = props.Name;
             this.props.appPackage = props.package;
-            this.props.appName = props.name;
             this.props.androidTargetSdkVersion = props.targetSdk;
             this.props.androidMinSdkVersion = props.minSdk;
 
@@ -111,6 +113,7 @@ module.exports = class extends Generator {
         this.fs.copyTpl(appPath + 'app/src/main/AndroidManifest.xml', 'app/src/main/AndroidManifest.xml', this.props);
         this.fs.copyTpl(appPath + 'app/src/main/java/com/adityawidayanto/blog', 'app/src/main/java/' + packageDir, this.props);
         this.fs.copyTpl(appPath + 'app/src/main/res/layout', 'app/src/main/res/layout', this.props);
+        this.fs.copyTpl(appPath + 'app/src/main/res/values/strings.xml', 'app/src/main/res/values/strings.xml', this.props);
         this.fs.copyTpl(appPath + 'app/src/test/java/com/adityawidayanto/blog', 'app/src/test/java/' + packageDir, this.props);
         this.fs.copyTpl(appPath + 'app/src/main/res/navigation', 'app/src/main/res/navigation', this.props);
 
