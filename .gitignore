@@ -1,3 +1,5 @@
 node_modules
 package-lock.json
 .vscode
+generators/app/templates/basemvvmkotlinandroid/
+*.DS_Store
